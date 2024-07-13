@@ -1,10 +1,10 @@
-import { useRoutes } from "react-router-dom"
-import Home from '../Pages/Home'
-import MyAccount from '../Pages/MyAccount'
-import MyOrder from '../Pages/MyOrder'
-import MyOrders from '../Pages/MyOrders'
-import SignIn from '../Pages/SignIn'
-import NotFound from '../Pages/NotFound'
+import { useRoutes } from 'react-router-dom';
+import Home from '../Pages/Home';
+import MyAccount from '../Pages/MyAccount';
+import MyOrder from '../Pages/MyOrder';
+import MyOrders from '../Pages/MyOrders';
+import SignIn from '../Pages/SignIn';
+import NotFound from '../Pages/NotFound';
 
 function Routes() {
   const appRoutes = useRoutes([
@@ -14,8 +14,8 @@ function Routes() {
     { path: '/my-orders', element: <MyOrders /> },
     { path: '/sign-in', element: <SignIn /> },
     { path: '/*', element: <NotFound /> },
-  ])
-  return (appRoutes);
+  ]);
+  return appRoutes;
 }
 
 export default Routes;
