@@ -1,4 +1,4 @@
-function Card() {
+function Card({ item }) {
   return (
     <div className='w-56 h-60 rounded-lg bg-white cursor-pointer'>
       <figure className='relative w-full h-4/5'>
@@ -8,16 +8,16 @@ function Card() {
 
         <img
           className='w-full h-full object-cover rounded-lg'
-          src='https://images.pexels.com/photos/1649771/pexels-photo-1649771.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+          src={`${item.images[0]}`}
           alt='headphones'
         />
         <span className='absolute bottom-0 left-0 m-2 px-3 rounded-lg bg-white/60 text-xs'>
-          Electronics
+          {item.category.name}
         </span>
       </figure>
       <p className='flex justify-between items-center mt-2'>
-        <span className='text-sm'>Headphones</span>
-        <span className='text-lg font-semibold'>$300</span>
+        <span className='text-sm'>{item.title}</span>
+        <span className='text-lg font-semibold'>${item.price}</span>
       </p>
     </div>
   );
