@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { HiPlus } from 'react-icons/hi';
 import { ShoppingCartContext } from '../../Context';
 
 function Card({ item }) {
@@ -10,7 +11,9 @@ function Card({ item }) {
         <div
           className='absolute top-0 right-0 grid place-items-center w-6 h-6 m-2 rounded-full bg-white'
           onClick={() => setCount(count + 1)}>
-          <span>+</span>
+          <span>
+            <HiPlus className='h-6 w-6 text-black' />
+          </span>
         </div>
 
         <img

@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
+import { HiShoppingBag } from 'react-icons/hi';
 import { ShoppingCartContext } from '../../Context';
 
 function Navbar() {
@@ -77,7 +78,12 @@ function Navbar() {
             Sign In
           </NavLink>
         </li>
-        <li>Car {count}</li>
+        <li className='flex items-center'>
+          <span>
+            <HiShoppingBag className='h-6 w-6 text-black' />
+          </span>
+          {count}
+        </li>
       </ul>
     </nav>
   );
