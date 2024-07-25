@@ -3,16 +3,22 @@ import { HiPlus } from 'react-icons/hi';
 import { ShoppingCartContext } from '../../Context';
 
 function Card({ item }) {
-  const { count, setCount } = useContext(ShoppingCartContext);
+  const { count, setCount, openProductDetail } =
+    useContext(ShoppingCartContext);
 
   return (
-    <div className='w-56 h-60 rounded-lg bg-white cursor-pointer'>
+    <div
+      className='w-56 h-60 rounded-lg bg-white cursor-pointer'
+      onClick={openProductDetail}>
       <figure className='relative w-full h-4/5'>
         <div
           className='absolute top-0 right-0 grid place-items-center w-6 h-6 m-2 rounded-full bg-white'
-          onClick={() => setCount(count + 1)}>
+          onClick={e => {
+            e.stopPropagation();
+            setCount(count + 1);
+          }}>
           <span>
-            <HiPlus className='h-6 w-6 text-black' />
+            <HiPlus className='h-4 w-4 text-black' />
           </span>
         </div>
 
