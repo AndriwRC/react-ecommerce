@@ -1,7 +1,6 @@
 import { useContext } from 'react';
-import { HiX } from 'react-icons/hi';
 import { ShoppingCartContext } from '../../Context';
-import './styles.css';
+import AsideMenu from '../AsideMenu';
 
 function ProductDetail() {
   const {
@@ -11,19 +10,10 @@ function ProductDetail() {
   } = useContext(ShoppingCartContext);
 
   return (
-    <aside
-      className={` ${
-        isProductDetailOpen ? 'flex' : 'hidden'
-      } product-detail flex flex-col fixed right-0 border border-black rounded-lg bg-white`}>
-      <div className='flex justify-between p-6'>
-        <h2 className='font-medium text-xl'>Detail</h2>
-        <span>
-          <HiX
-            className='h-6 w-6 text-black cursor-pointer'
-            onClick={closeProductDetail}
-          />
-        </span>
-      </div>
+    <AsideMenu
+      isOpen={isProductDetailOpen}
+      closeMenu={closeProductDetail}
+      title={'Detail'}>
       <figure className='px-6 w-2/3 max-h-52 self-center'>
         <img
           className='w-full h-full rounded-lg'
@@ -36,7 +26,7 @@ function ProductDetail() {
         <span className='text-base'>{item.title}</span>
         <span className='font-light text-sm'>{item.description}</span>
       </p>
-    </aside>
+    </AsideMenu>
   );
 }
 

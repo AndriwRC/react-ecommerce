@@ -3,12 +3,25 @@ import { HiPlus } from 'react-icons/hi';
 import { ShoppingCartContext } from '../../Context';
 
 function Card({ item }) {
-  const { count, setCount, openProductDetail, setSelectedProduct } =
-    useContext(ShoppingCartContext);
+  const {
+    count,
+    setCount,
+    openProductDetail,
+    setSelectedProduct,
+    cartProducts,
+    setCartProducts,
+    openCheckoutSideMenu,
+  } = useContext(ShoppingCartContext);
 
   const showProduct = item => {
     openProductDetail();
     setSelectedProduct(item);
+  };
+
+  const addProductsToCart = item => {
+    setCount(count + 1);
+    setCartProducts([...cartProducts, item]);
+    openCheckoutSideMenu();
   };
 
   return (
@@ -20,7 +33,7 @@ function Card({ item }) {
           className='absolute top-0 right-0 grid place-items-center w-6 h-6 m-2 rounded-full bg-white'
           onClick={e => {
             e.stopPropagation();
-            setCount(count + 1);
+            addProductsToCart(item);
           }}>
           <span>
             <HiPlus className='h-4 w-4 text-black' />
