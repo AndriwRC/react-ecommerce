@@ -1,6 +1,6 @@
 import { HiX } from 'react-icons/hi';
 
-function OrderCard({ title, image, price }) {
+function OrderCard({ id, title, image, price, handleDelete }) {
   return (
     <div className='flex justify-between items-center mb-3'>
       <div className='flex items-center gap-2'>
@@ -15,7 +15,10 @@ function OrderCard({ title, image, price }) {
       </div>
       <div className='flex items-center gap-2'>
         <p className='text-lg font-medium'>{price}</p>
-        <HiX className='h-6 w-6 text-black cursor-pointer' />
+        <HiX
+          onClick={() => handleDelete(id)}
+          className='h-6 w-6 text-black cursor-pointer'
+        />
       </div>
     </div>
   );
