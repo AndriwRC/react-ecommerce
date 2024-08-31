@@ -4,7 +4,8 @@ import { HiShoppingBag } from 'react-icons/hi';
 import { ShoppingCartContext } from '../../Context';
 
 function Navbar() {
-  const { count } = useContext(ShoppingCartContext);
+  const { cartProducts, openCheckoutSideMenu } =
+    useContext(ShoppingCartContext);
 
   const stateClassName = isActive =>
     isActive ? 'underline underline-offset-8' : undefined;
@@ -78,11 +79,13 @@ function Navbar() {
             Sign In
           </NavLink>
         </li>
-        <li className='flex items-center'>
+        <li
+          onClick={() => openCheckoutSideMenu()}
+          className='flex items-center cursor-pointer'>
           <span>
             <HiShoppingBag className='h-6 w-6 text-black' />
           </span>
-          {count}
+          {cartProducts.length}
         </li>
       </ul>
     </nav>

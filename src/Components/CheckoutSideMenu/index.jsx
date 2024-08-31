@@ -1,6 +1,7 @@
 import { useContext } from 'react';
-import AsideMenu from '../AsideMenu';
 import { ShoppingCartContext } from '../../Context';
+import { totalPrice } from '../../utils';
+import AsideMenu from '../AsideMenu';
 import OrderCard from '../OrderCard';
 
 function CheckoutSideMenu() {
@@ -32,6 +33,14 @@ function CheckoutSideMenu() {
             handleDelete={handleDelete}
           />
         ))}
+      </div>
+      <div className='px-6'>
+        <p className='flex justify-between items-center'>
+          <span className='font-light'>Total:</span>
+          <span className='font-medium text-2xl'>
+            ${totalPrice(cartProducts)}
+          </span>
+        </p>
       </div>
     </AsideMenu>
   );

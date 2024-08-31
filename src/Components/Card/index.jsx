@@ -5,8 +5,6 @@ import { ShoppingCartContext } from '../../Context';
 
 function Card({ item }) {
   const {
-    count,
-    setCount,
     openProductDetail,
     setSelectedProduct,
     cartProducts,
@@ -20,7 +18,6 @@ function Card({ item }) {
   };
 
   const addProductsToCart = item => {
-    setCount(count + 1);
     setCartProducts([...cartProducts, item]);
     openCheckoutSideMenu();
   };
