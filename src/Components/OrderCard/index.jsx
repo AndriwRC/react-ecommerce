@@ -15,10 +15,12 @@ function OrderCard({ id, title, image, price, handleDelete }) {
       </div>
       <div className='flex items-center gap-2'>
         <p className='text-lg font-medium'>{price}</p>
-        <HiX
-          onClick={() => handleDelete(id)}
-          className='h-6 w-6 text-black cursor-pointer'
-        />
+        {handleDelete && (
+          <HiX
+            onClick={() => handleDelete(id)}
+            className='h-6 w-6 text-black cursor-pointer'
+          />
+        )}
       </div>
     </div>
   );
