@@ -11,7 +11,7 @@ function Navbar() {
     isActive ? 'underline underline-offset-8' : undefined;
 
   return (
-    <nav className='w-full flex justify-between items-center fixed top-0 z-10 px-8 min-h-16 text-sm'>
+    <nav className='w-full flex justify-between items-center fixed top-0 z-10 px-8 min-h-16 text-sm bg-white'>
       <ul className='flex items-center gap-3'>
         <li className='font-semibold text-lg'>
           <NavLink
@@ -29,9 +29,16 @@ function Navbar() {
         </li>
         <li>
           <NavLink
-            to='/clothes'
+            to='/mens-clothing'
             className={({ isActive }) => stateClassName(isActive)}>
-            Clothes
+            Men{`'`}s Clothing
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to='/womens-clothing'
+            className={({ isActive }) => stateClassName(isActive)}>
+            Women{`'`}s Clothing
           </NavLink>
         </li>
         <li>
@@ -43,16 +50,9 @@ function Navbar() {
         </li>
         <li>
           <NavLink
-            to='/furniture'
+            to='/jewelery'
             className={({ isActive }) => stateClassName(isActive)}>
-            Furniture
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to='/others'
-            className={({ isActive }) => stateClassName(isActive)}>
-            Others
+            Jewelry
           </NavLink>
         </li>
       </ul>
