@@ -28,8 +28,6 @@ function ShoppingCartProvider({ children }) {
   };
   const closeCheckoutSideMenu = () => setIsCheckoutSideMenuOpen(false);
 
-  console.log(cartProducts);
-
   return (
     <ShoppingCartContext.Provider
       value={{

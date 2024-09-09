@@ -22,7 +22,7 @@ function CheckoutSideMenu() {
 
   const handleCheckout = () => {
     const newOrder = {
-      date: '01.02.24',
+      date: new Date().toLocaleDateString(),
       products: cartProducts,
       totalProducts: cartProducts.length,
       totalPrice: totalPrice(cartProducts),
