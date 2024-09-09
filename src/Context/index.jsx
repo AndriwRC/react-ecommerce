@@ -1,8 +1,33 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useEffect } from 'react';
 
 const ShoppingCartContext = createContext();
 
 function ShoppingCartProvider({ children }) {
+  // Get products
+  const [items, setItems] = useState([]);
+
+  const getItems = async () => {
+    try {
+      const res = await fetch('https://fakestoreapi.com/products');
+      const data = await res.json();
+      setItems(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    getItems();
+  }, []);
+
+  // Get products by title
+  const [searchByTitle, setSearchByTitle] = useState('');
+
+  // Filtered Items
+  const filteredItemsByTitle = items.filter(item =>
+    item.title.toLowerCase().includes(searchByTitle.toLowerCase().trim())
+  );
+
   // Shopping Cart | Add products to cart
   const [cartProducts, setCartProducts] = useState([]);
 
@@ -31,6 +56,9 @@ function ShoppingCartProvider({ children }) {
   return (
     <ShoppingCartContext.Provider
       value={{
+        filteredItemsByTitle,
+        searchByTitle,
+        setSearchByTitle,
         isProductDetailOpen,
         openProductDetail,
         closeProductDetail,
