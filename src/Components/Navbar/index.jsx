@@ -4,7 +4,7 @@ import { HiShoppingBag } from 'react-icons/hi';
 import { ShoppingCartContext } from '../../Context';
 
 function Navbar() {
-  const { cartProducts, openCheckoutSideMenu } =
+  const { cartProducts, openCheckoutSideMenu, signOut, setSignOut, account } =
     useContext(ShoppingCartContext);
 
   const stateClassName = isActive =>
@@ -57,28 +57,42 @@ function Navbar() {
         </li>
       </ul>
       <ul className='flex items-center gap-3'>
-        <li className='text-black/60'>example@mail.com</li>
-        <li>
-          <NavLink
-            to='/my-orders'
-            className={({ isActive }) => stateClassName(isActive)}>
-            My Orders
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to='/my-account'
-            className={({ isActive }) => stateClassName(isActive)}>
-            My Account
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to='/sign-in'
-            className={({ isActive }) => stateClassName(isActive)}>
-            Sign In
-          </NavLink>
-        </li>
+        {!signOut && (
+          <>
+            <li className='text-black/60'>{account?.email}</li>
+            <li>
+              <NavLink
+                to='/my-orders'
+                className={({ isActive }) => stateClassName(isActive)}>
+                My Orders
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to='/my-account'
+                className={({ isActive }) => stateClassName(isActive)}>
+                My Account
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to='/sign-in'
+                className={({ isActive }) => stateClassName(isActive)}
+                onClick={() => setSignOut(true)}>
+                Sign Out
+              </NavLink>
+            </li>
+          </>
+        )}
+        {signOut && (
+          <li>
+            <NavLink
+              to='/sign-in'
+              className={({ isActive }) => stateClassName(isActive)}>
+              Sign In
+            </NavLink>
+          </li>
+        )}
         <li
           onClick={() => openCheckoutSideMenu()}
           className='flex items-center cursor-pointer'>
