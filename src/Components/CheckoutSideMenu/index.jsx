@@ -13,6 +13,7 @@ function CheckoutSideMenu() {
     setCartProducts,
     order,
     setOrder,
+    signOut,
   } = useContext(ShoppingCartContext);
 
   const handleDelete = id => {
@@ -61,7 +62,7 @@ function CheckoutSideMenu() {
           <button
             className='bg-black py-3 text-white w-full rounded-lg'
             onClick={() => {
-              handleCheckout();
+              if (!signOut) handleCheckout();
               closeCheckoutSideMenu();
             }}>
             Checkout
