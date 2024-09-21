@@ -9,7 +9,9 @@ function SignIn() {
     <>
       <h1 className='font-medium text-xl mb-6'>Welcome</h1>
       {!showSignUpForm && <LogInForm setShowSignUpForm={setShowSignUpForm} />}
-      {showSignUpForm && <SignUpForm setShowSignUpForm={setShowSignUpForm} />}
+      {showSignUpForm && (
+        <SignUpForm setShowSignUpForm={setShowSignUpForm} formMode='Create' />
+      )}
     </>
   );
 }

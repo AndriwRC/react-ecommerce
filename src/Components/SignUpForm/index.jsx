@@ -1,11 +1,11 @@
 import { useContext, useState } from 'react';
 import { ShoppingCartContext } from '../../Context';
 
-function SignUpForm({ setShowSignUpForm }) {
-  const { setAccount } = useContext(ShoppingCartContext);
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [pass, setPass] = useState('');
+function SignUpForm({ setShowSignUpForm, formMode }) {
+  const { account, setAccount } = useContext(ShoppingCartContext);
+  const [name, setName] = useState(account?.name || '');
+  const [email, setEmail] = useState(account?.email || '');
+  const [pass, setPass] = useState(account?.password || '');
 
   const createAccount = () => {
     const newAccount = {
@@ -55,7 +55,7 @@ function SignUpForm({ setShowSignUpForm }) {
         required
       />
       <button className='py-3 rounded-lg font-semibold bg-black text-white disabled:bg-gray-400'>
-        Create
+        {formMode}
       </button>
     </form>
   );
