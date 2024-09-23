@@ -12,7 +12,7 @@ function Navbar() {
 
   // Dynamic Styles
   const stateClassName = isActive =>
-    isActive ? 'underline underline-offset-8' : undefined;
+    isActive ? 'underline underline-offset-8' : 'block';
 
   // Navbar Interaction
   const toggleCategoriesMenu = () => {

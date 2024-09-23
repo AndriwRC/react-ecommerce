@@ -18,7 +18,8 @@ function CategoriesMenu({ stateClassName, toggleMenu, showMenu }) {
         </NavLink>
       </li>
       <div
-        className={`${display} absolute top-full flex-col gap-3 bg-white p-4 rounded-lg border border-black md:flex md:items-center md:relative md:flex-row md:border-none md:p-0`}>
+        className={`${display} absolute top-full flex-col gap-3 bg-white p-4 rounded-lg border border-black md:flex md:items-center md:relative md:flex-row md:border-none md:p-0`}
+        onClick={() => toggleMenu()}>
         <li>
           <NavLink
             to='/all'
