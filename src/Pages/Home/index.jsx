@@ -24,13 +24,13 @@ function Home() {
     <>
       <h1 className='font-medium text-xl'>Exclusive Products</h1>
       <input
-        className='rounded-lg border border-black w-80 p-4 my-4 focus:outline-none'
+        className='rounded-lg border border-black w-3/4 max-w-80 p-4 my-4 focus:outline-none'
         type='text'
         placeholder='Search a product'
         value={searchByTitle}
         onChange={e => setSearchByTitle(e.target.value)}
       />
-      <div className='grid gap-4 grid-cols-4 w-full max-w-screen-lg'>
+      <div className='grid grid-cols-auto-fit-56 justify-center gap-4 w-full max-w-screen-lg'>
         {items.length === 0 ? (
           <p className='col-span-4 text-center font-light'>
             We {`don't`} have anything like that {':('}
