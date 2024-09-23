@@ -6,7 +6,7 @@ function AsideMenu({ isOpen, title, closeMenu, children }) {
     <aside
       className={` ${
         isOpen ? 'flex' : 'hidden'
-      } aside-menu flex flex-col fixed right-0 z-10 border border-black rounded-lg bg-white`}>
+      } aside-menu flex flex-col fixed right-0 z-10 w-full border border-black rounded-lg bg-white`}>
       <div className='flex justify-between p-6'>
         <h2 className='font-medium text-xl'>{title}</h2>
         <span>
