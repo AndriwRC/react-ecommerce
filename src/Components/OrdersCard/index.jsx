@@ -2,7 +2,7 @@ import { HiOutlineClipboardList } from 'react-icons/hi';
 
 function OrdersCard({ date, totalPrice, totalProducts }) {
   return (
-    <div className='flex justify-between items-center mb-3 w-96 p-4 border rounded-lg border-black'>
+    <div className='flex justify-between items-center mx-auto mb-3 w-72 sm:w-96 p-4 border rounded-lg border-black'>
       <p className='flex flex-col font-light'>
         <span>Date: {date}</span>
         <span>Total Products: {totalProducts}</span>
