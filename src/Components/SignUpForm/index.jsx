@@ -19,7 +19,7 @@ function SignUpForm({ setShowSignUpForm, formMode }) {
 
   return (
     <form
-      className='flex flex-col  w-80 bg-white'
+      className='flex flex-col w-72 sm:w-80 bg-white'
       onSubmit={e => {
         e.preventDefault();
         createAccount();

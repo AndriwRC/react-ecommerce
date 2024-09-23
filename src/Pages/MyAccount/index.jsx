@@ -11,12 +11,12 @@ function MyAccount() {
     <>
       <h1 className='mb-8 font-medium text-xl'>My account</h1>
       {!showEditForm && (
-        <div className='w-80 '>
+        <div className='w-72 sm:w-80 '>
           <p className='text-sm'>
             Name: <span className='text-lg font-medium'>{account.name}</span>
           </p>
-          <p className='text-sm'>
-            Email: <span className='text-lg font-medium'>{account.email}</span>
+          <p className='text-sm truncate'>
+            Email: <span className='text-lg font-medium '>{account.email}</span>
           </p>
           <button
             className='mt-4 w-full border border-black rounded-lg py-3'

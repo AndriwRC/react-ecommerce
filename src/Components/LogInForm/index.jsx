@@ -6,7 +6,7 @@ function LogInForm({ setShowSignUpForm }) {
   const { setSignOut, account } = useContext(ShoppingCartContext);
   return (
     <form
-      className='flex flex-col justify-between gap-4 w-80'
+      className='flex flex-col justify-between gap-4 w-72 sm:w-80'
       onSubmit={e => e.preventDefault()}>
       <div className='flex flex-wrap justify-between gap-4 p-4'>
         <label className='w-1/3 text-end' htmlFor='email'>
