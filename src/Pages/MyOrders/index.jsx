@@ -18,6 +18,11 @@ function MyOrders() {
             />
           </Link>
         ))}
+        {order.length == 0 && (
+          <p className='w-72 sm:w-80 text-center mx-auto'>
+            There is no orders yet!
+          </p>
+        )}
       </div>
     </>
   );
